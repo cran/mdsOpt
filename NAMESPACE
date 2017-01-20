@@ -1,0 +1,17 @@
+# Remove the previous line if you edit this file
+
+# Export all names
+exportPattern(".")
+
+# Import all packages listed as Imports or Depends
+import(
+  smacof,
+  clusterSim
+)
+importFrom("graphics", "Axis", "box", "lines", "mtext", "par", "plot",
+           "points", "strwidth", "text")
+importFrom("stats", "as.dist", "as.hclust", "cutree", "dist", "hclust",
+           "kmeans", "mad", "median", "na.omit", "rnorm", "runif",
+           "sd", "var")
+importFrom("utils", "read.csv", "read.csv2", "write.table")
+importFrom("stats", "cor", "lm", "summary.lm")
