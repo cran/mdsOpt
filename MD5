@@ -1,11 +1,12 @@
-db956ebc73948482ac79dfff35bc856b *DESCRIPTION
+78939447b0b0b555a49279218c325971 *DESCRIPTION
+00ca4b2d8ab81157a39682af442dcb44 *INDEX
 f456cf128ccecd71865f4a013bce4422 *NAMESPACE
 6656c94f54efa7f0eebea4b22a2e1c87 *R/findOptimalSmacofSym.r
-090575d2a537cb978b3f1689e9931c67 *R/optSmacofSym.r
+38f67d3fc1900d75b0670be504997f81 *R/optSmacofSym.r
 18625df0599ab220b9045ee06ab84511 *data/data_lower_silesian.rda
 8a976453d9350c5320e92fc308109e76 *man/data_lower_silesian.rd
 f2f2c7f97f99ecdd9d283c0842e1fac8 *man/findOptimalSmacofSym.rd
-178e3c42c00c5cfceebec72dc4518c8f *man/optSmacofSym_mMDS.rd
-6d984595199455b28af932992735276d *man/optSmacofSym_nMDS.rd
+3b486e57e6a4d0d88c57c05370cf1876 *man/optSmacofSym_mMDS.rd
+c3e3d14dc4610bf11c4a251c0a9478aa *man/optSmacofSym_nMDS.rd
 44d4e8a69799911ccf4eafdf96759111 *tests/testthat.R
 7fdd9c5e2050e75f5e26fe5166779300 *tests/testthat/test_db.R

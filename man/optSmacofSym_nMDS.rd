@@ -28,6 +28,8 @@ Parameter \code{normalizations} may be the subset of the following values:
 
     "n8","n9","n9a","n11","n12a"))
 
+if \code{normalizations} is set to "n0" no normalization is applied
+
 Parameter \code{distances} may be the subset of the following values: 
 
 "euclidean", "manhattan","maximum","seuclidean","GDM1" 

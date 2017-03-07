@@ -25,7 +25,7 @@
     if (!is.vector(normalizations)) stop (paste("Optional parameter \"normalizations\" must be a vector containing only values from the following list: \n",paste(metnor,collapse=" ; ")))
     for (i in 1:length(normalizations))
     {
-      if (sum(metnor==normalizations[i])!=1){
+      if (sum(metnor==normalizations[i])!=1 && normalizations[i]!="n0"){
         stop (paste("Optional parameter \"normalizations\" must be a vector containing only values from the following list: \n",paste(metnor,collapse=" ; ")))
       }
     }
