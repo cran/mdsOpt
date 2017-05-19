@@ -139,7 +139,7 @@
         }
         res<-do.call("smacofSym",c(cl,def_args[!names(def_args) %in% names(cl)]))
       }
-      model<-lm(as.vector(res$confdiss)~as.vector(res$delta))
+      model<-lm(as.vector(res$confdist)~as.vector(res$delta))
           if(minstress>res$stress){
       minstress<-res$stress
       minstressj<-j
@@ -147,7 +147,7 @@
 		results[j]<-res$stress
 		HHI[j]<-sum((res$spp)^2)
 		R2[j]<-summary.lm(model)$r.squared
-		r[j]<-cor(as.vector(res$confdiss),as.vector(res$delta))
+		r[j]<-cor(as.vector(res$confdist),as.vector(res$delta))
 	}
   if(sum(colscale=="mspline")!=0){
     resultsFull<-cbind(colnor,colscale,coldegrees,coldist,results,HHI)[order(results),]
