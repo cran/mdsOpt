@@ -1,13 +1,13 @@
 .optSmacofSym<-function(x,normalizations=NULL,distances=NULL,mdsmodels=NULL,weights=NULL,spline.degrees=c(2),outputCsv="",outputCsv2="",...){
-
+  
   if(is.null(dim(x))){
     dim(x)<-c(length(x),1)
   }
-
+  
   eps=1e-06
   ndim=2
   itmax=1000
-
+  
   z <- list(...)
   if(!is.null(z$eps)) eps<-z$eps
   if(!is.null(z$ndim)) ndim<-z$ndim
@@ -52,10 +52,10 @@
     metdist<-distances
   }
   if(!is.null(weights) && (sum(weights)!=1 || sum(weights<0)!=0 ||length(weights)!=ncol(x))){
-     stop("weights should satisfy conditions: each weight takes value from [0; 1] and sum of weights eguals one")
+    stop("weights should satisfy conditions: each weight takes value from [0; 1] and sum of weights eguals one")
   }
-
-
+  
+  
   colnor<-NULL
   colscale<-NULL
   coldist<-NULL
@@ -64,32 +64,32 @@
   HHI<-rep(0,length(metnor)*length(metscale)*length(metdist))
   R2<-rep(0,length(metnor)*length(metscale)*length(metdist))
   r<-rep(0,length(metnor)*length(metscale)*length(metdist))
-
+  
   metall<-NULL
   
   for(a in metnor){
     for(b in metscale){
       for(c in metdist){
-         if(b!="mspline"){
-            degrees=c(-1)
-         }
-         else{
-           degrees=spline.degrees
-         }
-         for(d in degrees){
-           metall<-c(metall,paste(a," ",b," ",c," ",d))
-           colnor<-c(colnor,a)
-           colscale<-c(colscale,b)
-           coldist<-c(coldist,c)
-           if(d!=-1){
-             coldegrees<-c(coldegrees,d)
-           }
-           else{
-             coldegrees<-c(coldegrees,"")
-             
-           }
-           
-         }
+        if(b!="mspline"){
+          degrees=c(-1)
+        }
+        else{
+          degrees=spline.degrees
+        }
+        for(d in degrees){
+          metall<-c(metall,paste(a," ",b," ",c," ",d))
+          colnor<-c(colnor,a)
+          colscale<-c(colscale,b)
+          coldist<-c(coldist,c)
+          if(d!=-1){
+            coldegrees<-c(coldegrees,d)
+          }
+          else{
+            coldegrees<-c(coldegrees,"")
+            
+          }
+          
+        }
       }
     }
   }
@@ -110,45 +110,51 @@
     if(grepl("interval",metall[j])){
       type="interval"
     }
- 
+    if(grepl("mspline",metall[j])){
+      type="mspline"
+    }
+    
     normalized<-data.Normalization(x,type=trimws(substr(metall[j],1,4)))
     if(!is.null(weights)){
-        for(i in 1:ncol(normalized)){
-            normalized[,i]<-normalized[,i]*weights[i]
-        }
+      for(i in 1:ncol(normalized)){
+        normalized[,i]<-normalized[,i]*weights[i]
+      }
     }
     for(method  in metdistAll[1:3]){
       
-    if(grepl(method,metall[j])){
-      def_args <- list(delta=dist(normalized,method=method),type=type,ndim=ndim, eps=eps,itmax=itmax)    
-      res<-do.call("smacofSym",c(cl,def_args[!names(def_args) %in% names(cl)]))
-    }
+      if(grepl(method,metall[j])){
+      def_args <- list(delta=dist(normalized,method=method),type=type,ndim=ndim, eps=eps,itmax=itmax,spline.degree=as.integer(substr(metall[j], nchar(metall[j]), nchar(metall[j]))))    
+        if(def_args[["spline.degree"]]==1)def_args[["spline.degree"]]=NULL;
+        res<-do.call("smacofSym",c(cl,def_args[!names(def_args) %in% names(cl)]))
+      }
     }
     method  =metdistAll[4]
-      if(grepl(method,metall[j])){
-        def_args <- list(delta=dist(normalized,method="euclidean")^2,type=type,ndim=ndim)
-        res<-do.call("smacofSym",c(cl,def_args[!names(def_args) %in% names(cl)]))
-      }
+    if(grepl(method,metall[j])){
+      def_args <- list(delta=dist(normalized,method="euclidean")^2,type=type,ndim=ndim,spline.degree=as.integer(substr(metall[j], nchar(metall[j]), nchar(metall[j]))))
+      if(def_args[["spline.degree"]]==1)def_args[["spline.degree"]]=NULL;
+      res<-do.call("smacofSym",c(cl,def_args[!names(def_args) %in% names(cl)]))
+    }
     method  = metdistAll[5]
-      if(grepl(method,metall[j])){
-        if(!is.null(weights)){
-          def_args <- list(delta=dist.GDM(data.Normalization(x,type=trimws(substr(metall[j],1,4))),weightsType="different1",weights=weights),ndim=ndim,type=type,eps=eps,itmax=itmax)
-        }
-        else{
-          def_args <- list(delta=dist.GDM(data.Normalization(x,type=trimws(substr(metall[j],1,4)))),ndim=ndim,type=type,eps=eps,itmax=itmax)
-        }
-        res<-do.call("smacofSym",c(cl,def_args[!names(def_args) %in% names(cl)]))
+    if(grepl(method,metall[j])){
+      if(!is.null(weights)){
+        def_args <- list(delta=dist.GDM(data.Normalization(x,type=trimws(substr(metall[j],1,4))),weightsType="different1",weights=weights),ndim=ndim,type=type,eps=eps,itmax=itmax,spline.degree=as.integer(substr(metall[j], nchar(metall[j]), nchar(metall[j]))))
       }
-      model<-lm(as.vector(res$confdist)~as.vector(res$delta))
-          if(minstress>res$stress){
+      else{
+        def_args <- list(delta=dist.GDM(data.Normalization(x,type=trimws(substr(metall[j],1,4)))),ndim=ndim,type=type,eps=eps,itmax=itmax,spline.degree=as.integer(substr(metall[j], nchar(metall[j]), nchar(metall[j]))))
+      }
+      if(def_args[["spline.degree"]]==1)def_args[["spline.degree"]]=NULL;
+      res<-do.call("smacofSym",c(cl,def_args[!names(def_args) %in% names(cl)]))
+    }
+    model<-lm(as.vector(res$confdist)~as.vector(res$delta))
+    if(minstress>res$stress){
       minstress<-res$stress
       minstressj<-j
-          }
-		results[j]<-res$stress
-		HHI[j]<-sum((res$spp)^2)
-		R2[j]<-summary.lm(model)$r.squared
-		r[j]<-cor(as.vector(res$confdist),as.vector(res$delta))
-	}
+    }
+    results[j]<-res$stress
+    HHI[j]<-sum((res$spp)^2)
+    R2[j]<-summary.lm(model)$r.squared
+    r[j]<-cor(as.vector(res$confdist),as.vector(res$delta))
+  }
   if(sum(colscale=="mspline")!=0){
     resultsFull<-cbind(colnor,colscale,coldegrees,coldist,results,HHI)[order(results),]
     colnames(resultsFull)<-c("Normalization method", "MDS model","Spline degree","Distance measure","STRESS 1","HHI spp")
@@ -164,7 +170,7 @@
     write.table(resultsFull, file=outputCsv2,sep=";",dec=",",row.names=TRUE,col.names=NA)
   }
   return (resultsFull)
-
+  
 }
 
 
@@ -187,7 +193,7 @@ optSmacofSym_mMDS<-function(x,normalizations=NULL,distances=NULL,
   }
   res<-.optSmacofSym(x=x,normalizations=normalizations,distances=distances,mdsmodels=mdsmodels,weights=weights,spline.degrees=spline.degrees,outputCsv=outputCsv,outputCsv2=outputCsv2,...)
   return(res)
-
+  
 }
 
 optSmacofSym_nMDS<-function(x,normalizations=NULL,
@@ -212,5 +218,3 @@ optSmacofSym_nMDS<-function(x,normalizations=NULL,
   # removing last two column, not applicable for non-metric scaling
   return (res)
 }
-
-

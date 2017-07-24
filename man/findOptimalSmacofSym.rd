@@ -42,35 +42,37 @@ Marek Walesiak \email{marek.walesiak@ue.wroc.pl}, Andrzej Dudek \email{andrzej.d
 Department of Econometrics and Computer Science, University of Economics, Wroclaw, Poland \url{http://keii.ue.wroc.pl/clusterSim}
 }
 \references{
-BORG I., GROENEN P.J.F., (2005), Modern Multidimensional Scaling. Theory and Applications, 2nd Edition, Springer Science+Business Media, New York.
+BORG I., GROENEN P.J.F., (2005), Modern Multidimensional Scaling. Theory and Applications, 2nd Edition, Springer Science+Business Media, New York. ISBN: 978-0387-25150-9. Available at: \url{http://www.springeronline.com/0-387-25150-2}.
 
-BORG I., GROENEN P.J.F., MAIR P., (2013), Applied Multidimensional Scaling, Springer, Heidelberg, New York, Dordrecht, London.
+BORG I., GROENEN P.J.F., MAIR P., (2013), Applied Multidimensional Scaling, Springer, Heidelberg, New York, Dordrecht, London. Available at: \url{http://dx.doi.org/10.1007/978-3-642-31848-1}.
 
-DE LEEUW J., MAIR P., (2015), Shepard Diagram, Wiley StatsRef: Statistics Reference Online, John Wiley & Sons Ltd.
+DE LEEUW J., MAIR P., (2015), Shepard Diagram, Wiley StatsRef: Statistics Reference Online, John Wiley & Sons Ltd. Available at: \url{http://dx.doi.org/10.1002/9781118445112.stat06268.pub2}.
 
 HERFINDAHL O.C., (1950), Concentration in the Steel Industry, Doctoral thesis, Columbia University.
 
 HIRSCHMAN A.O., (1964). The Paternity of an Index, The American Economic Review, Vol. 54, 761-762.
 
-WALESIAK M., (2014), Przegląd formuł normalizacji wartości zmiennych oraz ich własności w statystycznej analizie wielowymiarowej [Data Normalization in Multivariate Data Analysis. An Overview and Properties], Przegląd Statystyczny, tom 61, z. 4, 363-372.
+WALESIAK M., (2014), Przegląd formuł normalizacji wartości zmiennych oraz ich własności w statystycznej analizie wielowymiarowej [Data Normalization in Multivariate Data Analysis. An Overview and Properties], Przegląd Statystyczny, tom 61, z. 4, 363-372. Available at: \url{http://keii.ue.wroc.pl/pracownicy/mw/2014_Walesiak_Przeglad_Statystyczny_z_4.pdf}
 
-WALESIAK M., (2016a), Wybór grup metod normalizacji wartości zmiennych w skalowaniu wielowymiarowym [The Choice of Groups of Variable Normalization Methods in Multidimensional Scaling], Przegląd Statystyczny, tom 63, z. 1, 7-18.
+WALESIAK M., (2016a), Wybór grup metod normalizacji wartości zmiennych w skalowaniu wielowymiarowym [The Choice of Groups of Variable Normalization Methods in Multidimensional Scaling], Przegląd Statystyczny, tom 63, z. 1, 7-18. Available at: \url{http://keii.ue.wroc.pl/pracownicy/mw/2016_Walesiak_Przeglad_Statystyczny_z_1.pdf}
 
-WALESIAK M., (2016b), Visualization of Linear Ordering Results for Metric Data with the Application of Multidimensional Scaling, Ekonometria, 2(52), 9-21.
+WALESIAK M., (2016b), Visualization of Linear Ordering Results for Metric Data with the Application of Multidimensional Scaling, Ekonometria, 2(52), 9-21. Available at: \url{http://dx.doi.org/10.15611/ekt.2016.2.01}.
 
 WALESIAK M., DUDEK A., (2016), Selecting the optimal multidimensional scaling procedure for metric data with R environment, Statistics in Transition - new series (in review).
 }
 \seealso{\code{\link{data.Normalization}}, \code{\link{dist.GDM}}, \code{\link{dist}}, \code{\link{smacofSym}}
 }
 \examples{
-  library(mdsOpt)
-  metnor<-c("n1","n2","n3","n5","n5a","n8","n9","n9a","n11","n12a")
-  metscale<-c("ratio","interval")
-  metdist<-c("euclidean","manhattan","maximum","seuclidean","GDM1")
-  data(data_lower_silesian)
-  res<-optSmacofSym_mMDS(data_lower_silesian,normalizations=metnor,
-  distances=metdist,mdsmodels=metscale)
-  print(findOptimalSmacofSym(res))
+print("uncomment to run - approximately 7 seconds runtime")
+# uncomment to run - approximately 7 seconds runtime
+#  library(mdsOpt)
+#  metnor<-c("n1","n2","n3","n5","n5a","n8","n9","n9a","n11","n12a")
+#  metscale<-c("ratio","interval")
+#  metdist<-c("euclidean","manhattan","maximum","seuclidean","GDM1")
+#  data(data_lower_silesian)
+#  res<-optSmacofSym_mMDS(data_lower_silesian,normalizations=metnor,
+#  distances=metdist,mdsmodels=metscale)
+#  print(findOptimalSmacofSym(res))
 }
 \keyword{multidimensional scaling}
 \keyword{nonmetric MDS}
