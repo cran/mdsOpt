@@ -20,7 +20,7 @@ distances=NULL,mdsmodels=NULL,spline.degrees=c(2),outputCsv="",outputCsv2="",y=N
 
 'columns' - lower and upper bound of intervals in neighbouring columns}
 \item{normalizations}{optional, vector of normalization methods that should be used in procedure}
-\item{distances}{optional, vector of distance measures (Hausdorf, IChino-Yaguchi) that should be used in procedure}
+\item{distances}{optional, vector of distance measures (Hausdorf, Ichino-Yaguchi) that should be used in procedure}
 \item{mdsmodels}{optional, vector of multidimensional models (ratio, interval, mspline) that should be used in procedure}
 \item{spline.degrees}{optional, vector (e.g. 2:4) of spline.degree parameter values that should be used in procedure for mspline model}
 \item{outputCsv}{optional, name of csv file with results}
@@ -66,17 +66,17 @@ Marek Walesiak \email{marek.walesiak@ue.wroc.pl}, Andrzej Dudek \email{andrzej.d
 Department of Econometrics and Computer Science, University of Economics, Wroclaw, Poland \url{http://keii.ue.wroc.pl/mdsOpt}
 }
 \references{
-BORG I., GROENEN P.J.F., (2005), Modern Multidimensional Scaling. Theory and Applications, 2nd Edition, Springer Science+Business Media, New York. ISBN: 978-0387-25150-9. Available at: \url{http://www.springeronline.com/0-387-25150-2}.
+Borg, I., Groenen, P.J.F. (2005), Modern Multidimensional Scaling. Theory and Applications, 2nd Edition, Springer Science+Business Media, New York. ISBN: 978-0387-25150-9. Available at: \url{http://www.springeronline.com/0-387-25150-2}.
 
-BORG I., GROENEN P.J.F., MAIR P., (2013), Applied Multidimensional Scaling, Springer, Heidelberg, New York, Dordrecht, London. Available at: \url{http://dx.doi.org/10.1007/978-3-642-31848-1}.
+Borg, I., Groenen, P.J.F., Mair, P. (2013), Applied Multidimensional Scaling, Springer, Heidelberg, New York, Dordrecht, London. Available at: \url{http://dx.doi.org/10.1007/978-3-642-31848-1}.
 
-DE LEEUW J., MAIR P., (2015), Shepard Diagram, Wiley StatsRef: Statistics Reference Online, John Wiley & Sons Ltd. Available at: \url{http://dx.doi.org/10.1002/9781118445112.stat06268.pub2}.
+De Leeuw, J., Mair, P. (2015), Shepard Diagram, Wiley StatsRef: Statistics Reference Online, John Wiley & Sons Ltd. Available at: \url{http://dx.doi.org/10.1002/9781118445112.stat06268.pub2}.
 
-HERFINDAHL O.C., (1950), Concentration in the Steel Industry, Doctoral thesis, Columbia University.
+Herfindahl, O.C. (1950), Concentration in the Steel Industry, Doctoral thesis, Columbia University.
 
-HIRSCHMAN A.O., (1964). The Paternity of an Index, The American Economic Review, Vol. 54, 761-762.
+Hirschman, A.O. (1964), The Paternity of an Index, The American Economic Review, Vol. 54, 761-762.
 
-WALESIAK M., (2014), Przegląd formuł normalizacji wartości zmiennych oraz ich własności w statystycznej analizie wielowymiarowej [Data Normalization in Multivariate Data Analysis. An Overview and Properties], Przegląd Statystyczny, tom 61, z. 4, 363-372. Available at: \url{http://keii.ue.wroc.pl/pracownicy/mw/2014_Walesiak_Przeglad_Statystyczny_z_4.pdf}
+Walesiak, M. (2014), Przegląd formuł normalizacji wartości zmiennych oraz ich własności w statystycznej analizie wielowymiarowej [Data Normalization in Multivariate Data Analysis. An Overview and Properties], Przegląd Statystyczny, tom 61, z. 4, 363-372. Available at: \url{http://keii.ue.wroc.pl/pracownicy/mw/2014_Walesiak_Przeglad_Statystyczny_z_4.pdf}
 
 Walesiak, M., Dudek, A. (2017), \emph{Selecting the Optimal Multidimensional Scaling Procedure for Metric Data with R Environment}, „STATISTICS IN TRANSITION new series”, September, Vol. 18, No. 3, pp. 521-540. Available at: \url{http://stat.gov.pl/en/sit-en/issues-and-articles-sit/}.
 }

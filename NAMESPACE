@@ -7,7 +7,8 @@ exportPattern(".")
 import(
   smacof,
   clusterSim,
-  symbolicDA
+  symbolicDA,
+  smds
 )
 importFrom("graphics", "Axis", "box", "lines", "mtext", "par", "plot",
            "points", "strwidth", "text")
@@ -16,3 +17,8 @@ importFrom("stats", "as.dist", "as.hclust", "cutree", "dist", "hclust",
            "sd", "var")
 importFrom("utils", "read.csv", "read.csv2", "write.table")
 importFrom("stats", "cor", "lm", "summary.lm")
+importFrom('animation','saveVideo','ani.options')
+importFrom('spdep','Rotation')
+importFrom('plotrix','draw.circle')
+importFrom("stats", "cmdscale")
+importFrom("smds", "IMDS","idistBox")
