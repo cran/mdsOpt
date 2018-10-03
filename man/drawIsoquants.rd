@@ -24,7 +24,7 @@ Walesiak, M., (2016), Visualization of Linear Ordering Results for Metric Data w
 
 Walesiak, M. (2017), The application of multidimensional scaling to measure and assess changes in the level of social cohesion of the Lower Silesia region in the period 2005-2015, Ekonometria, 3(57), 9-25. Available at: \url{http://dx.doi.org/10.15611/ekt.2017.3.01}.
 
-Walesiak, M., Dudek, A. (2017), \emph{Selecting the Optimal Multidimensional Scaling Procedure for Metric Data with R Environment}, „STATISTICS IN TRANSITION new series”, September, Vol. 18, No. 3, pp. 521-540. Available at: \url{http://stat.gov.pl/en/sit-en/issues-and-articles-sit/}.
+Walesiak, M., Dudek, A. (2017), \emph{Selecting the Optimal Multidimensional Scaling Procedure for Metric Data with R Environment}, STATISTICS IN TRANSITION new series, September, Vol. 18, No. 3, pp. 521-540. Available at: \url{http://dx.doi.org/10.21307/stattrans-2016-084}.
 }
 \examples{
 #Example 1
@@ -52,20 +52,20 @@ library(mdsOpt)
 library(smacof)
 library(clusterSim)
 data(data_lower_silesian)
-z <- data.Normalization(data_lower_silesian, type="n1")
-d <- dist.GDM(z, method="GDM1")
-res <- smacofSym(delta=d,ndim=2,type="interval")
-write.table(res$conf,"konfiguracja_2d.csv",dec=",",sep=";",col.names=NA,row.names=TRUE)
+z<-data.Normalization(data_lower_silesian, type="n1")
+d<-dist.GDM(z, method="GDM1")
+res<-smacofSym(delta=d,ndim=2,type="interval")
+write.table(res$conf,"conf_2d.csv",dec=",",sep=";",col.names=NA,row.names=TRUE)
 alfa<- 1.05*pi
 a<- cos(alfa)
 b<- -sin(alfa)
 c<- sin(alfa)
 d<- cos(alfa)
 D<-array(c(a,b,c,d), c(2,2))
-res1<-read.csv2("konfiguracja_2d.csv", header=TRUE, row.names=1)
+res1<-read.csv2("conf_2d.csv", header=TRUE, row.names=1)
 res1<-as.matrix(res1)
 res2<-res1%*%D
-plot(res2, xlab="Wymiar 1 (D1)",ylab="Wymiar 2 (D2)",main="",asp=1)
+plot(res2, xlab="Dimension 1",ylab="Dimension 2",main="",asp=1)
 points(res2[1:31,],pch=1,font=2)
 text(res2[c(1:31),],pos=3,cex=0.7,row.names(z[c(1:31),]))
 r1<-res2[nrow(z),1]

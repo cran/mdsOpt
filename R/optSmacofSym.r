@@ -1,4 +1,4 @@
-.optSmacofSym<-function(x,normalizations=NULL,distances=NULL,mdsmodels=NULL,weights=NULL,spline.degrees=c(2),outputCsv="",outputCsv2="",...){
+.optSmacofSym<-function(x,normalizations=NULL,distances=NULL,mdsmodels=NULL,weights=NULL,spline.degrees=c(2),outputCsv="",outputCsv2="",outDec=",",stressDigits=6,HHIDigits=2,...){
   
   if(is.null(dim(x))){
     dim(x)<-c(length(x),1)
@@ -14,7 +14,7 @@
   if(!is.null(z$itmax)) itmax<-z$itmax
   # Data set
   x<-as.matrix(x)
-  options(OutDec=",")
+  options(OutDec=outDec)
   # MDS parameters
   metnor<-c("n1","n2","n3","n5","n5a","n8","n9","n9a","n11","n12a")
   metscale<-c("ratio","interval","mspline","ordinal")
@@ -105,6 +105,9 @@
   cl[["outputCsv2"]]<-NULL
   cl[["weights"]]<-NULL
   cl[["spline.degrees"]]<-NULL
+  cl[["outDec"]]<-NULL
+  cl[["stressDigits"]]<-NULL
+  cl[["HHIDigits"]]<-NULL
   for(j in 1:mn){
     type="ratio"
     if(grepl("interval",metall[j])){
@@ -156,11 +159,11 @@
     r[j]<-cor(as.vector(res$confdist),as.vector(res$delta))
   }
   if(sum(colscale=="mspline")!=0){
-    resultsFull<-cbind(colnor,colscale,coldegrees,coldist,results,HHI)[order(results),]
+    resultsFull<-cbind(colnor,colscale,coldegrees,coldist,format(round(results,stressDigits),scientific = FALSE),format(round(HHI,HHIDigits),scientific = FALSE))[order(results),]
     colnames(resultsFull)<-c("Normalization method", "MDS model","Spline degree","Distance measure","STRESS 1","HHI spp")
   }
   else{
-    resultsFull<-cbind(colnor,colscale,coldist,results,HHI)[order(results),]
+    resultsFull<-cbind(colnor,colscale,coldist,format(round(results,stressDigits),scientific = FALSE),format(round(HHI,HHIDigits),scientific = FALSE))[order(results),]
     colnames(resultsFull)<-c("Normalization method", "MDS model","Distance measure","STRESS 1","HHI spp")
   }
   if(outputCsv!=""){
@@ -177,7 +180,8 @@
 optSmacofSym_mMDS<-function(x,normalizations=NULL,distances=NULL,
                             mdsmodels=NULL,weights=NULL,
                             spline.degrees=c(2),
-                            outputCsv="",outputCsv2="",...){
+                            outputCsv="",outputCsv2="",outDec=",",
+                            stressDigits=6,HHIDigits=2,...){
   metscale<-c("ratio","interval","mspline")
   if(!is.null(mdsmodels)){
     if (!is.vector(mdsmodels)) stop (paste("Optional parameter \"mdsmodels\" must be a vector containing only values from the following list: \n",paste(metscale,collapse=" ; ")))
@@ -191,7 +195,7 @@ optSmacofSym_mMDS<-function(x,normalizations=NULL,distances=NULL,
   else{
     mdsmodels=metscale;
   }
-  res<-.optSmacofSym(x=x,normalizations=normalizations,distances=distances,mdsmodels=mdsmodels,weights=weights,spline.degrees=spline.degrees,outputCsv=outputCsv,outputCsv2=outputCsv2,...)
+  res<-.optSmacofSym(x=x,normalizations=normalizations,distances=distances,mdsmodels=mdsmodels,weights=weights,spline.degrees=spline.degrees,outputCsv=outputCsv,outputCsv2=outputCsv2,outDec=outDec,stressDigits=stressDigits,HHIDigits=HHIDigits,...)
   return(res)
   
 }
@@ -200,7 +204,7 @@ optSmacofSym_nMDS<-function(x,normalizations=NULL,
                             distances=NULL,
                             mdsmodels=c("ordinal"),
                             weights=NULL,outputCsv="",
-                            outputCsv2="",...){
+                            outputCsv2="",outDec=",",stressDigits=6,HHIDigits=2,...){
   metscale<-c("ordinal")
   if(!is.null(mdsmodels)){
     if (!is.vector(mdsmodels)) stop (paste("Optional parameter \"mdsmodels\" must be a vector containing only values from the following list: \n",paste(metscale,collapse=" ; ")))
@@ -214,7 +218,7 @@ optSmacofSym_nMDS<-function(x,normalizations=NULL,
   else{
     mdsmodels=metscale
   }
-  res<-.optSmacofSym(x=x,normalizations=normalizations,distances=distances,mdsmodels=mdsmodels,weights=NULL,outputCsv=outputCsv,outputCsv2=outputCsv2,...)
+  res<-.optSmacofSym(x=x,normalizations=normalizations,distances=distances,mdsmodels=mdsmodels,weights=NULL,outputCsv=outputCsv,outputCsv2=outputCsv2,outDec=outDec,stressDigits=stressDigits,HHIDigits=HHIDigits,...)
   # removing last two column, not applicable for non-metric scaling
   return (res)
 }

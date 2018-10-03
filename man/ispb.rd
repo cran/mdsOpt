@@ -1,7 +1,7 @@
 \name{ispb}
 \alias{ispb}
-\title{Calculation of I-stress per box indices for multidimensional scaling procedure for symbolic interval-valued data}
-\description{Calculation of I-stress per box indices for multidimensional scaling procedure for symbolic interval-valued data}
+\title{Calculation of I-stress per box indices for multidimensional scaling procedure for interval-valued data}
+\description{Calculation of I-stress per box indices for multidimensional scaling procedure for interval-valued data}
 \usage{ispb(EIDM,idiss)}
 \arguments{
 \item{EIDM}{the interval-valued dissimilarity matrix IDM (an object of class "array": IDM[1,,]: the lower dissmilarity matrix; IDM[2,,]: the upper dissmilarity matrix) in reduced space}
@@ -14,7 +14,7 @@ Marek Walesiak \email{marek.walesiak@ue.wroc.pl}, Andrzej Dudek \email{andrzej.d
 Department of Econometrics and Computer Science, University of Economics, Wroclaw, Poland \url{http://keii.ue.wroc.pl/mdsOpt}
 }
 \references{
-Borg, I., Groenen, P.J.F. (2005), Modern Multidimensional Scaling. Theory and Applications, 2nd Edition, Springer Science+Business Media, New York. ISBN: 978-0387-25150-9. Available at: \url{http://www.springeronline.com/0-387-25150-2}.
+Borg, I., Groenen, P.J.F. (2005), Modern Multidimensional Scaling. Theory and Applications, 2nd Edition, Springer Science+Business Media, New York. ISBN: 978-0387-25150-9. Available at: \url{https://www.springer.com/la/book/9780387251509}.
 
 Borg, I., Groenen, P.J.F., Mair, P. (2013), Applied Multidimensional Scaling, Springer, Heidelberg, New York, Dordrecht, London. Available at: \url{http://dx.doi.org/10.1007/978-3-642-31848-1}.
 
@@ -22,7 +22,7 @@ Groenen, P.J.F. Winsberg, S., Rodriguez, O., Diday, E. (2006), I-Scal: Multidime
 
 Walesiak, M. (2014), Przegląd formuł normalizacji wartości zmiennych oraz ich własności w statystycznej analizie wielowymiarowej [Data Normalization in Multivariate Data Analysis. An Overview and Properties], Przegląd Statystyczny, tom 61, z. 4, 363-372. Available at: \url{http://keii.ue.wroc.pl/pracownicy/mw/2014_Walesiak_Przeglad_Statystyczny_z_4.pdf}
 
-Walesiak, M., Dudek, A. (2017), \emph{Selecting the Optimal Multidimensional Scaling Procedure for Metric Data with R Environment}, STATISTICS IN TRANSITION new series, September, Vol. 18, No. 3, pp. 521-540. Available at: \url{http://stat.gov.pl/en/sit-en/issues-and-articles-sit/}.
+Walesiak, M., Dudek, A. (2017), \emph{Selecting the Optimal Multidimensional Scaling Procedure for Metric Data with R Environment}, STATISTICS IN TRANSITION new series, September, Vol. 18, No. 3, pp. 521-540. Available at: \url{http://dx.doi.org/10.21307/stattrans-2016-084}.
 }
 \seealso{\code{\link{data.Normalization}}, \code{\link{interval_normalization}}, \code{\link{IMDS}}
 }
@@ -51,7 +51,7 @@ spb<-ispb(res.mm_box$EIDM,my.idiss)
 w<-sort(spb,decreasing=TRUE)
 print(spb)
 names(w)<-order(spb,decreasing = TRUE)
-plot(w, xlab="Object", ylab="spb in \%")
+plot(w, xlab="Object", ylab="spb in percents")
 text(w,pos=1,names(w))
 }
 \keyword{multidimensional scaling}

@@ -1,5 +1,5 @@
 optSmacofSymInterval<-function(x,dataType="simple",normalizations=NULL
-,distances=NULL,mdsmodels=NULL,spline.degrees=c(2),outputCsv="",outputCsv2="",y=NULL,...){
+,distances=NULL,mdsmodels=NULL,spline.degrees=c(2),outputCsv="",outputCsv2="",y=NULL,outDec=",",stressDigits=6,HHIDigits=2,...){
   if(dataType=="sda"){
     x<-SO2Simple(x)
   }
@@ -32,7 +32,7 @@ optSmacofSymInterval<-function(x,dataType="simple",normalizations=NULL
   if(!is.null(z$itmax)) itmax<-z$itmax
   # Data set
 
-  options(OutDec=",")
+  options(OutDec=outDec)
   # MDS parameters
 
   metnor<-c("n1","n2","n3","n3a","n4","n5","n5a","n6","n6a","n7","n8","n9","n9a","n10","n11","n12","n12a","n13")  
@@ -122,6 +122,9 @@ optSmacofSymInterval<-function(x,dataType="simple",normalizations=NULL
   cl[["spline.degrees"]]<-NULL
   cl[["dataType"]]<-NULL
   cl[["y"]]<-NULL
+  cl[["outDec"]]<-NULL
+  cl[["stressDigits"]]<-NULL
+  cl[["HHIDigits"]]<-NULL
   for(j in 1:mn){
     type="ratio"
     if(grepl("interval",metall[j])){
@@ -140,7 +143,7 @@ optSmacofSymInterval<-function(x,dataType="simple",normalizations=NULL
     for(method  in metdistAll){
       #print(paste(metall[j],"/",length(metall)))
       if(grepl(method,metall[j])){
-        print(metall[j])
+        #print(metall[j])
         bindx<-data.Normalization(as.matrix(rbind(x[,,1],x[,,2])),type=trimws(substr(metall[j],1,4)))
         nx<-x
         nx[,,1]<-bindx[1:dim(x)[[1]],]
@@ -177,11 +180,11 @@ optSmacofSymInterval<-function(x,dataType="simple",normalizations=NULL
     r[j]<-cor(as.vector(res$confdist),as.vector(res$delta))
   }
   if(sum(colscale=="mspline")!=0){
-    resultsFull<-cbind(colnor,colscale,coldegrees,coldist,results,HHI)[order(results),]
+    resultsFull<-cbind(colnor,colscale,coldegrees,coldist,format(round(results,stressDigits),scientific = FALSE),format(round(HHI,HHIDigits),scientific = FALSE))[order(results),]
     colnames(resultsFull)<-c("Normalization method", "MDS model","Spline degree","Distance measure","STRESS 1","HHI spp")
   }
   else{
-    resultsFull<-cbind(colnor,colscale,coldist,results,HHI)[order(results),]
+    resultsFull<-cbind(colnor,colscale,coldist,format(round(results,4),scientific = FALSE),format(round(HHI,4),scientific = FALSE))[order(results),]
     colnames(resultsFull)<-c("Normalization method", "MDS model","Distance measure","STRESS 1","HHI spp")
   }
   if(outputCsv!=""){

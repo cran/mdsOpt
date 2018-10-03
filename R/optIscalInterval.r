@@ -1,19 +1,6 @@
-# library(clusterSim)
-# library(smds)
-# 
-# ispb<-function(EIDM,idiss){
-#  l<-(EIDM[1,,] - idiss[1,,])^2
-#  u<-(EIDM[2,,] - idiss[2,,])^2
-#  ser<-l+u
-#  raw<-apply(as.matrix(ser),1, mean)
-#  column<-apply(as.matrix(ser),2, mean)
-#  spb<-as.vector(100*(raw/sum(raw)))
-#  spb
-# }
-
-
 optIscalInterval<-function(x,dataType="simple",normalizations=NULL,
-                           optMethods=NULL,outputCsv="",outputCsv2="",y=NULL,...){
+                           optMethods=NULL,outputCsv="",outputCsv2="",y=NULL,outDec=","
+                           ,stressDigits=6,HHIDigits=2,...){
   
   eps=1e-06
   p=2
@@ -25,7 +12,7 @@ optIscalInterval<-function(x,dataType="simple",normalizations=NULL,
   if(!is.null(z$maxit)) maxit<-z$maxit
   # Data set
 
-  options(OutDec=",")
+  options(OutDec=outDec)
   # MDS parameters
 
   metnor<-c("n1","n2","n3","n3a","n4","n5","n5a","n6","n6a","n7","n8","n9","n9a","n10","n11","n12","n12a","n13")  
@@ -78,12 +65,15 @@ optIscalInterval<-function(x,dataType="simple",normalizations=NULL,
   cl[["outputCsv2"]]<-NULL
   cl[["dataType"]]<-NULL
   cl[["y"]]<-NULL
+  cl[["outDec"]]<-NULL
+  cl[["stressDigits"]]<-NULL
+  cl[["HHIDigits"]]<-NULL
   x1<-x
   y1<-y
   for(j in 1:mn){
-    print(metall)
-    print(strsplit(metall[j]," ")[[1]][1])
-    print(strsplit(metall[j]," ")[[1]][2])
+    #print(metall)
+    #print(strsplit(metall[j]," ")[[1]][1])
+    #print(strsplit(metall[j]," ")[[1]][2])
     normalized<-interval_normalization(x=x1,y=y1,dataType=dataType,type=strsplit(metall[j],"   ")[[1]][1])
     x<-normalized$simple[,,1]
     y<-normalized$simple[,,2]
@@ -112,7 +102,7 @@ optIscalInterval<-function(x,dataType="simple",normalizations=NULL,
     results[j]<-Istress
     HHI[j]<-sum((ispb(res$EIDM,my.idiss))^2)
   }
-  resultsFull<-cbind(colnor,colmethod,results,HHI)[order(results),]
+  resultsFull<-cbind(colnor,colmethod,format(round(results,stressDigits),scientific = FALSE),format(round(HHI,HHIDigits),scientific = FALSE))[order(results),]
   colnames(resultsFull)<-c("Normalization method", "Opt method","I-STRESS","HHI spb")
   if(outputCsv!=""){
     write.table(resultsFull, file=outputCsv,row.names=TRUE,col.names=NA)
@@ -122,27 +112,3 @@ optIscalInterval<-function(x,dataType="simple",normalizations=NULL,
   }
   return (resultsFull)
 }
-
-# data(data_symbolic_interval_polish_voivodships)
-# x<-data_symbolic_interval_polish_voivodships
-# w<-optIscalInterval(x)
-# print(w)
-
-# findOptimalIscalInterval<-function(table,critical_stress=(max(as.numeric(gsub(",",".",table[,"I-STRESS"],fixed=T)))+min(as.numeric(gsub(",",".",table[,"I-STRESS"],fixed=T))))/2){
-#   number<-(1:nrow(table))[order(as.numeric(gsub(",",".",table[,"HHI spb"])))]
-#   table<-table[order(as.numeric(gsub(",",".",table[,"HHI spb"]))),]
-#   number<-number[as.numeric(gsub(",",".",table[,"I-STRESS"],fixed=T))<=critical_stress]
-#   table<-table[as.numeric(gsub(",",".",table[,"I-STRESS"],fixed=T))<=critical_stress,]
-#   if(nrow(table)==0){
-#     stop("No mds procedure for given constraints")
-#   }
-#     res<-list(
-#       Nr=as.vector(number[1]),
-#       Normalization_method=as.vector(table[1,"Normalization method"]),
-#       Opt_method=as.vector(table[1,"Opt method"]),
-#       I-STRESS=as.numeric(gsub(",",".",table[1,"I-STRESS"],fixed=T)),HHI_spb=as.numeric(gsub(",",".",table[1,"HHI spb"],fixed=T)))
-#   return(res)
-# }
-# 
-# 
-# print(findOptimalSmacofSym(w))

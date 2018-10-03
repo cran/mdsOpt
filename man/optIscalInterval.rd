@@ -1,12 +1,14 @@
 \name{optIscalInterval}
 \alias{optIscalInterval}
-\title{Selecting the optimal multidimensional scaling procedure for symbolic interval-valued data}
-\description{Selecting the optimal multidimensional scaling procedure by varying all combinations of normalization and optimization method models}
+\title{Selecting the optimal multidimensional scaling procedure for interval-valued data}
+\description{Selecting the optimal multidimensional scaling procedure by varying all combinations of normalization and optimization methods}
 \usage{
 optIscalInterval(x,dataType="simple",normalizations=NULL,
-                           optMethods=NULL,outputCsv="",outputCsv2="",y=NULL,...)}
+optMethods=NULL,outputCsv="",outputCsv2="",y=NULL,outDec=",",
+stressDigits=6,HHIDigits=2,...)
+}
 \arguments{
-\item{x}{symbolic interval-valued data table or matrix or dataset}
+\item{x}{interval-valued data table or matrix or dataset}
 \item{dataType}{Type of symbolic data table passed to function:
 
 'sda' - full symbolicDA format object; 
@@ -22,7 +24,10 @@ optIscalInterval(x,dataType="simple",normalizations=NULL,
 \item{optMethods}{optional, vector of optimization methods}
 \item{outputCsv}{optional, name of csv file with results}
 \item{outputCsv2}{optional, name of csv (comma as decimal point sign) file with results}
-\item{y}{matrix or dataset with upper bounds of intervals if argument \code{dataType} is uuqual to "separate_tables"}
+\item{y}{matrix or dataset with upper bounds of intervals if argument \code{dataType} is equal to "separate_tables"}
+\item{outDec}{decimal sign used in returned table}
+\item{stressDigits}{Number of decimal digits for displaying I-Stress value}
+\item{HHIDigits}{Number of decimal digits for displaying HHI spb value}
 \item{...}{arguments passed to smds I-scal implementation (function IMDS), like p, maxit, eps and others}
 }
 \details{
@@ -56,7 +61,7 @@ Marek Walesiak \email{marek.walesiak@ue.wroc.pl}, Andrzej Dudek \email{andrzej.d
 Department of Econometrics and Computer Science, University of Economics, Wroclaw, Poland \url{http://keii.ue.wroc.pl/mdsOpt}
 }
 \references{
-Borg I., Groenen P.J.F., (2005), Modern Multidimensional Scaling. Theory and Applications, 2nd Edition, Springer Science+Business Media, New York. ISBN: 978-0387-25150-9. Available at: \url{http://www.springeronline.com/0-387-25150-2}.
+Borg, I., Groenen, P.J.F. (2005), Modern Multidimensional Scaling. Theory and Applications, 2nd Edition, Springer Science+Business Media, New York. ISBN: 978-0387-25150-9. Available at: \url{https://www.springer.com/la/book/9780387251509}.
 
 Borg, I., Groenen, P.J.F., Mair, P. (2013), Applied Multidimensional Scaling, Springer, Heidelberg, New York, Dordrecht, London. Available at: \url{http://dx.doi.org/10.1007/978-3-642-31848-1}.
 
@@ -70,7 +75,7 @@ Walesiak, M. (2014), Przegląd formuł normalizacji wartości zmiennych oraz ich
 
 Walesiak, M. (2016), Visualization of Linear Ordering Results for Metric Data with the Application of Multidimensional Scaling, Ekonometria, 2(52), 9-21. Available at: \url{http://dx.doi.org/10.15611/ekt.2016.2.01}.
 
-Walesiak, M., Dudek, A. (2017), \emph{Selecting the Optimal Multidimensional Scaling Procedure for Metric Data with R Environment}, STATISTICS IN TRANSITION new series, September, Vol. 18, No. 3, pp. 521-540. Available at: \url{http://stat.gov.pl/en/sit-en/issues-and-articles-sit/}.
+Walesiak, M., Dudek, A. (2017), \emph{Selecting the Optimal Multidimensional Scaling Procedure for Metric Data with R Environment}, STATISTICS IN TRANSITION new series, September, Vol. 18, No. 3, pp. 521-540. Available at: \url{http://dx.doi.org/10.21307/stattrans-2016-084}.
 }
 \seealso{\code{\link{data.Normalization}}, \code{\link{interval_normalization}}, \code{\link{IMDS}}
 }
@@ -82,7 +87,7 @@ Walesiak, M., Dudek, A. (2017), \emph{Selecting the Optimal Multidimensional Sca
 #x<-data_symbolic_interval_polish_voivodships
 #metnor<-c("n1","n2","n3","n5","n5a","n8","n9","n9a","n11","n12a")
 #methods<-c("MM","BFGS")
-#res<-optIscalInterval(x,dataType="simple",normalizations=metnor,optMethods=methods)
+#res<-optIscalInterval(x,dataType="simple",normalizations=metnor,optMethods=methods,outDec=".")
 #Istress<-as.numeric(gsub(",",".",res[,"I-STRESS"],fixed=TRUE))
 #hhi<-as.numeric(gsub(",",".",res[,"HHI spb"],fixed=TRUE))
 #t<-findOptimalIscalInterval(res)
