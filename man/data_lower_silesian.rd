@@ -6,7 +6,7 @@
 (29 Lower Silesian counties, pattern and antipattern object)   
 The evaluation of tourist attractiveness of Lower Silesian counties was performed using 16 metric variables (measured on a ratio scale):
 x1 – beds in hotels per 1 km2 of a county area,
-x2 – number of nights spent daily by resident tourists (Poles) per 1000 inhabitants of a county,
+x2 – number of nights spent daily by resident tourists per 1000 inhabitants of a county,
 x3 – number of nights spent daily by foreign tourists per 1000 inhabitants of a county,
 x4 – gas pollution emission in tons per 1 km2 of a county area,
 x5 – number of criminal offences and crimes against life and health per 1000 inhabitants of a county,

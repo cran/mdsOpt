@@ -1,7 +1,7 @@
-15849a0afcd84c3be739ce1cc039495a *DESCRIPTION
+39bce77bfa97cbb55806b9fbfd4827f2 *DESCRIPTION
 42379c7989804803eebd0100442eee92 *INDEX
 5d3be877982d5332069c5c6d776adf3d *NAMESPACE
-85591ea1870a4949844e9c5ed9007bd9 *R/drawIsoquants.r
+5f3f9f8b891511c641514e3ab1eac818 *R/drawIsoquants.r
 c19c4307e7e3ab04ff4cef54056561e7 *R/findOptimalIscalInterval.r
 6656c94f54efa7f0eebea4b22a2e1c87 *R/findOptimalSmacofSym.r
 cf5eda72b5cc47324301e5a51fd9a69e *R/ispb.r
@@ -10,7 +10,7 @@ f904ef3ea6464925ebeefaff95f7d778 *R/optSmacofSym.r
 acf5832b1418f4b562509468e0584e68 *R/optSmacofSymInterval.r
 212d0cb674c2e767c3f3b2d93d2145de *R/rotation2dAnimation.r
 57a59f2f81e11be3749b6c6f9274117e *data/data_lower_silesian.rda
-a5510fde824df1f77b9aadd773438a9c *man/data_lower_silesian.rd
+12efdb05914a642f7c481563f6511e8a *man/data_lower_silesian.rd
 0ede384a332dc0e971d44560f21a7bbe *man/drawIsoquants.rd
 44750e4233c96a66442d6249d9003070 *man/findOptimalIscalInterval.rd
 84ec93bb08617a8ce4ee5959e81405b5 *man/findOptimalSmacofSym.rd

@@ -20,13 +20,13 @@ drawIsoquants<-function(x,y=NULL,number=6,steps=NULL){
 }
 
 
-.plot.s<-function(x,adjX=0.1,adjY=2.5) 
+.plot.s<-function(x,adjX=0.1,adjY=2.5,cex = 0.7) 
 {
     spp.perc <- sort(x$spp, decreasing = TRUE)
     xaxlab <- names(spp.perc)
     op <- par(mar = c(3, 4, 4, 2))
     text(1:length(spp.perc)+adjX, spp.perc+adjY, labels = xaxlab, pos = 3, 
-         cex = 0.7,srt=90)
+         cex=cex,srt=90)
     for (i in 1:length(spp.perc)) lines(c(i, i), c(spp.perc[i], 
                                                    0), col = "lightgray", lty = 2)
     par(op)
