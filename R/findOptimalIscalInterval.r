@@ -1,8 +1,22 @@
-findOptimalIscalInterval<-function(table,critical_stress=(max(as.numeric(gsub(",",".",table[,"I-STRESS"],fixed=T)))+min(as.numeric(gsub(",",".",table[,"I-STRESS"],fixed=T))))/2){
-  number<-(1:nrow(table))[order(as.numeric(gsub(",",".",table[,"HHI spb"])))]
-  table<-table[order(as.numeric(gsub(",",".",table[,"HHI spb"]))),]
-  number<-number[as.numeric(gsub(",",".",table[,"I-STRESS"],fixed=T))<=critical_stress]
-  table<-table[as.numeric(gsub(",",".",table[,"I-STRESS"],fixed=T))<=critical_stress,]
+findOptimalIscalInterval<-function(table,critical_stress=(max(as.numeric(gsub(",",".",table[,"I-STRESS"],fixed=T)))+min(as.numeric(gsub(",",".",table[,"I-STRESS"],fixed=T))))/2,critical_HHI=NA){
+  if(is.na(critical_stress) && is.na(critical_stress)){
+  stop("One of the criterions critical_Stress or critical_HHI shoul be set")
+  }
+  if(is.na(critical_HHI)){
+    opt<-"HHI spb"
+    cut<-"I-STRESS"
+    critical=critical_stress
+  }
+  else{
+    opt<-"I-STRESS"
+    cut<-"HHI spb"
+    critical=critical_HHI
+  }
+  print(opt)
+  number<-(1:nrow(table))[order(as.numeric(gsub(",",".",table[,opt])))]
+  table<-table[order(as.numeric(gsub(",",".",table[,opt]))),]
+  number<-number[as.numeric(gsub(",",".",table[,cut],fixed=T))<=critical]
+  table<-table[as.numeric(gsub(",",".",table[,cut],fixed=T))<=critical,]
   if(nrow(table)==0){
     stop("No mds procedure for given constraints")
   }

@@ -5,7 +5,9 @@
 \usage{
 findOptimalIscalInterval(table,critical_stress=
 (max(as.numeric(gsub(",",".",table[,"I-STRESS"],fixed=T)))+
-min(as.numeric(gsub(",",".",table[,"I-STRESS"],fixed=T))))/2)}
+min(as.numeric(gsub(",",".",table[,"I-STRESS"],fixed=T))))/2,
+critical_HHI=NA)
+}
 \arguments{
 \item{table}{
 result from \code{\link{optSmacofSym_nMDS}}. Data frame ordered by increasing value of I-Stress fit measure with columns:
@@ -20,6 +22,8 @@ result from \code{\link{optSmacofSym_nMDS}}. Data frame ordered by increasing va
 
 }
 \item{critical_stress}{threshold value of I-Stress fit measure. Default - mid-range of I-Stress fit measures calculated for all MDS procedures}
+\item{critical_HHI}{threshold value of Hirschman-Herfindahl HHI index. Only one parameter critical_stress or critical_HHI can be set, and the function finds the optimal value among the procedures for which the selected measure is lower or equal treshold value }
+
 }
 \value{
 \item{Nr}{number of row in \code{table} with optimal multidimensional scaling procedure}

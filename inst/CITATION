@@ -1,0 +1,23 @@
+citHeader("To cite in publications use:")
+
+## R >= 2.8.0 passes package metadata to citation().
+if(!exists("meta") || is.null(meta)) meta <- packageDescription("clue")
+
+year <- sub("-.*", "", meta$Date)
+note <- sprintf("R package version %s", meta$Version)
+
+bibentry("Article",
+         title = "Selecting the Optimal Multidimensional Scaling Procedure for Metric Data with R Environment",
+         author = 
+             person("Marek", "Walesiak",
+                    email = "Marek.Walesiak@ue.wroc.pl"),
+             person("Andrzej", "Dudek",
+                    email = "Andrzej.Dudek@ue.wroc.pl"),
+         year = 2017,
+         journal = "STATISTICS IN TRANSITION new series",
+         volume = 18,
+         number = 3,
+         month = "September",
+         pages = "521-540",
+         doi = "10.21307/stattrans-2016-084"
+         )

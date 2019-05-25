@@ -1,8 +1,21 @@
-findOptimalSmacofSym<-function(table,critical_stress=(max(as.numeric(gsub(",",".",table[,"STRESS 1"],fixed=T)))+min(as.numeric(gsub(",",".",table[,"STRESS 1"],fixed=T))))/2){
-  number<-(1:nrow(table))[order(as.numeric(gsub(",",".",table[,"HHI spp"])))]
-  table<-table[order(as.numeric(gsub(",",".",table[,"HHI spp"]))),]
-  number<-number[as.numeric(gsub(",",".",table[,"STRESS 1"],fixed=T))<=critical_stress]
-  table<-table[as.numeric(gsub(",",".",table[,"STRESS 1"],fixed=T))<=critical_stress,]
+findOptimalSmacofSym<-function(table,critical_stress=(max(as.numeric(gsub(",",".",table[,"STRESS 1"],fixed=T)))+min(as.numeric(gsub(",",".",table[,"STRESS 1"],fixed=T))))/2,critical_HHI=NA){
+  if(is.na(critical_stress) && is.na(critical_stress)){
+  stop("One of the criterions critical_Stress or critical_HHI shoul be set")
+  }
+  if(is.na(critical_HHI)){
+    opt<-"HHI spp"
+    cut<-"STRESS 1"
+    critical=critical_stress
+  }
+  else{
+    opt<-"STRESS 1"
+    cut<-"HHI spp"
+    critical=critical_HHI
+  }
+  number<-(1:nrow(table))[order(as.numeric(gsub(",",".",table[,opt])))]
+  table<-table[order(as.numeric(gsub(",",".",table[,opt]))),]
+  number<-number[as.numeric(gsub(",",".",table[,cut],fixed=T))<=critical]
+  table<-table[as.numeric(gsub(",",".",table[,cut],fixed=T))<=critical,]
   if(nrow(table)==0){
     stop("No mds procedure for given constraints")
   }
@@ -24,4 +37,6 @@ findOptimalSmacofSym<-function(table,critical_stress=(max(as.numeric(gsub(",",".
     STRESS_1=as.numeric(gsub(",",".",table[1,"STRESS 1"],fixed=T)),HHI_spp=as.numeric(gsub(",",".",table[1,"HHI spp"],fixed=T)))
   }
   return(res)
+  
 }
+

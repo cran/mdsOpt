@@ -16,7 +16,7 @@
   x<-as.matrix(x)
   options(OutDec=outDec)
   # MDS parameters
-  metnor<-c("n1","n2","n3","n5","n5a","n8","n9","n9a","n11","n12a")
+  metnor<-c("n1","n2","n3","n3a","n4","n5","n5a","n6","n6a","n7","n8","n9","n9a","n10","n11","n12","n12a","n13")
   metscale<-c("ratio","interval","mspline","ordinal")
   metdist<-c("euclidean","manhattan","maximum","seuclidean","GDM1")
   metdistAll<-c("euclidean","manhattan","maximum","seuclidean","GDM1")

@@ -162,7 +162,7 @@ optSmacofSymInterval<-function(x,dataType="simple",normalizations=NULL
           dd=dist.Symbolic(nx,type="H",power = 2) 
         }
         if(method=="SO_3"){
-          dd=dist.SDA(simple2SO(nx),type = "SO_3")
+          dd=dist_SDA(simple2SO(nx),type = "SO_3")
         }
         def_args <- list(delta=dd,ndim=ndim,type=type,eps=eps,itmax=itmax,spline.degree=as.integer(substr(metall[j], nchar(metall[j]), nchar(metall[j]))))
       if(def_args[["spline.degree"]]==1)def_args[["spline.degree"]]=NULL;

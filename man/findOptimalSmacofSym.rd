@@ -6,11 +6,12 @@ and nonmetric MDS (by varying all combinations of normalization methods and dist
 \usage{
 findOptimalSmacofSym(table,
 critical_stress=(max(as.numeric(gsub(",",".",table[,"STRESS 1"],fixed=T)))+
-min(as.numeric(gsub(",",".",table[,"STRESS 1"],fixed=T))))/2)
+min(as.numeric(gsub(",",".",table[,"STRESS 1"],fixed=T))))/2,
+critical_HHI=NA)
 }
 \arguments{
 \item{table}{
-result from \code{\link{optSmacofSym_nMDS}} or \code{\link{optSmacofSym_mMDS}}. Data frame ordered by increasing value of Stress-1 fit measure with columns:
+result from \code{\link{optSmacofSym_nMDS}} or \code{\link{optSmacofSym_mMDS}}. Data frame ordered by increasing value of Stress-1 fit measure or HHI index with columns:
 
 \code{Normalization method}
 
@@ -26,6 +27,7 @@ result from \code{\link{optSmacofSym_nMDS}} or \code{\link{optSmacofSym_mMDS}}. 
 
 }
 \item{critical_stress}{threshold value of Kruskal's Stress-1 fit measure. Default - mid-range of Kruskal's Stress-1 fit measures calculated for all MDS procedures}
+\item{critical_HHI}{threshold value of Hirschman-Herfindahl HHI index. Only one parameter critical_stress or critical_HHI can be set, and the function finds the optimal value among the procedures for which the selected measure is lower or equal treshold value }
 }
 \value{
 \item{Nr}{number of row in \code{table} with optimal multidimensional scaling procedure}
