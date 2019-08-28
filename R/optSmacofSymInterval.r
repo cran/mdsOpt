@@ -134,16 +134,8 @@ optSmacofSymInterval<-function(x,dataType="simple",normalizations=NULL
       type="mspline"
     }
     
-#    normalized<-data.Normalization(x,type=trimws(substr(metall[j],1,4)))
-#    if(!is.null(weights)){
-#      for(i in 1:ncol(normalized)){
-#        normalized[,i]<-normalized[,i]*weights[i]
-#      }
-#    }
     for(method  in metdistAll){
-      #print(paste(metall[j],"/",length(metall)))
       if(grepl(method,metall[j])){
-        #print(metall[j])
         bindx<-data.Normalization(as.matrix(rbind(x[,,1],x[,,2])),type=trimws(substr(metall[j],1,4)))
         nx<-x
         nx[,,1]<-bindx[1:dim(x)[[1]],]
@@ -162,7 +154,8 @@ optSmacofSymInterval<-function(x,dataType="simple",normalizations=NULL
           dd=dist.Symbolic(nx,type="H",power = 2) 
         }
         if(method=="SO_3"){
-          dd=dist_SDA(simple2SO(nx),type = "SO_3")
+          #BACKWARD COMPATIBILITY
+          tryCatch({dd=do.call("dist_SDA",c(simple2SO(nx),type = "SO_3"))},error={dd=do.call("dist.SDA",c(simple2SO(nx),type = "SO_3"))})
         }
         def_args <- list(delta=dd,ndim=ndim,type=type,eps=eps,itmax=itmax,spline.degree=as.integer(substr(metall[j], nchar(metall[j]), nchar(metall[j]))))
       if(def_args[["spline.degree"]]==1)def_args[["spline.degree"]]=NULL;

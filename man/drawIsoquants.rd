@@ -55,14 +55,15 @@ data(data_lower_silesian)
 z<-data.Normalization(data_lower_silesian, type="n1")
 d<-dist.GDM(z, method="GDM1")
 res<-smacofSym(delta=d,ndim=2,type="interval")
-write.table(res$conf,"conf_2d.csv",dec=",",sep=";",col.names=NA,row.names=TRUE)
+res1<-res$conf
+#write.table(res1,"conf_2d.csv",dec=",",sep=";",col.names=NA,row.names=TRUE)
 alfa<- 1.05*pi
 a<- cos(alfa)
 b<- -sin(alfa)
 c<- sin(alfa)
 d<- cos(alfa)
 D<-array(c(a,b,c,d), c(2,2))
-res1<-read.csv2("conf_2d.csv", header=TRUE, row.names=1)
+#res1<-read.csv2("conf_2d.csv", header=TRUE, row.names=1)
 res1<-as.matrix(res1)
 res2<-res1%*%D
 plot(res2, xlab="Dimension 1",ylab="Dimension 2",main="",asp=1)
