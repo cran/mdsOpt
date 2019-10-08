@@ -65,8 +65,8 @@ E-mail: \email{andrzej.dudek@ue.wroc.pl}
 \Keywords{ multidimensional scaling, metric and interval-valued data, tourist attractiveness, $HHI$ index, R}
 \Plainkeywords{ multidimensional scaling, metric and interval-valued data, tourist attractiveness, HHI index, R}
 \begin{document}
-\section[a]{Introduction}
-\subsection[The aim]{The aim of multidimensional scaling}
+\section[Introduction]{Introduction}
+\subsection[The aim of multidimensional scaling]{The aim of multidimensional scaling}
 
 Classical multidimensional scaling (MDS) is a method that represents (dis)similarity data as distances in a low-dimensional space (typically 2 or 3 dimensional) 
 in order to make these data accessible to visual inspection and exploration (\cite{Borg+Groenen:2005}, p. 3). 
@@ -84,7 +84,7 @@ Multidimensional scaling is a widely used technique in many areas, including psy
 marketing research (\cite{Cooper:1983}), tourism (\cite{Marcussen:2014}), musicology (\cite{Adams:1995}).
 
 
-\subsection[c]{The approaches in multidimensional scaling via \pkg{mdsOpt} package}
+\subsection[The approaches in multidimensional scaling via mdsOpt package]{The approaches in multidimensional scaling via \pkg{mdsOpt} package}
 
 In MDS carried out on the basis of a metric data matrix (interval, ratio) or interval-valued
 data table, via \pkg{mdsOpt} package, three approaches can be distinguished:
@@ -207,7 +207,7 @@ variables (see the second demonstration example). Counties are part of 16 Polish
 interval-valued data are obtained. Interval of a given variable for the voivodship covers all or selected (e.g. from
 first to ninth decile, from first to third quartile) observations from counties.
 
-\subsection[d]{The main idea of the \pkg{mdsOpt} package}
+\subsection[The main idea of the mdsOpt package]{The main idea of the \pkg{mdsOpt} package}
 
 The authors of the monograph (\cite{Borg+Groenen+Mair:2013}; \cite{Borg+Groenen+Mair:2018}, chapter 7) pointed out the typical mistakes made by users of
 multidimensional scaling. A frequent mistake on the part of users of MDS results is to evaluate Stress mechanically (rejecting an MDS solution because its Stress seems ``too high''). In
@@ -230,7 +230,7 @@ Kruskal's $\mathit{Stress}\text{{}-}1$ (standardized residual sum of squares) fi
 Symbolic-to-symbolic approach two criteria were applied in \pkg{mdsOpt} package:  $I\text{{}-}\mathit{Stress}$ fit measure and the Hirschman-Herfindahl $\mathit{HHI}$ index, calculated based on  $I\text{{}-}\mathit{Stress}$ per box index values (\textit{ispb}). 
 \end{itemize}
 
-\subsection[e]{Package \pkg{mdsOpt} versus other packages}
+\subsection[Package mdsOpt versus other packages]{Package \pkg{mdsOpt} versus other packages}
 
 The algorithms implemented in the \pkg{mdsOpt} package have not been used in other R program packages so far and it can be
 treated as a complementary package for well-known libraries \pkg{smacof} (\cite{Mair+Leeuw+Borg+Groenen:2019}; \cite{Leeuw+Mair:2009}) and
@@ -294,13 +294,13 @@ Additionally \pkg{mdsOpt} contain functions for calculation of  $I\text{{}-}\mat
  $I\text{{}-}\mathit{dist}$ diagram for interval-valued data.
 
 
-\section[f]{Selection of the optimal multidimensional scaling procedure}
+\section{Selection of the optimal multidimensional scaling procedure}
 
 The article proposes a solution that allows the optimal multidimensional scaling procedure, for metric and
 interval-valued data, to be chosen. 
 
 
-\subsection[g]{Basic decision problems}
+\subsection{Basic decision problems}
 
 {For classic-to-classic and symbolic-to-classic approaches t}he study uses the function
 {smacofSym of \pkg{smacof} package of R program. In smacofSym function }basic decision problems involve the
@@ -497,7 +497,7 @@ $z_{\mathit{ij}}\otimes z_{\mathit{kj}}=z_{\mathit{ij}}{\cap}z_{\mathit{kj}}.$
 
 \end{table}
 
-\subsection[h]{Stages in selecting the optimal procedure for MDS}
+\subsection{Stages in selecting the optimal procedure for MDS}
 
 The initial point of the application of smacofSym function is to determine e.g. the following values of arguments
 ({all parameters can be changed by the user}):
@@ -682,9 +682,9 @@ plot, the correctness of the model scaling will be evaluated. If the results are
 otherwise it returns to step 1 and multidimensional scaling for three dimensions is performed (ndim=3).}
 \end{enumerate}
 
-\section[i]{Using the package -- examples}
+\section{Using the package -- examples}
 
-\subsection[j]{Metric data (classic-to-classic approach)}
+\subsection{Metric data (classic-to-classic approach)}
 
 In first example we will find the optimal solution for classic-to-classic MDS approach. The package \pkg{mdsOpt} contains
 dataset called data\_lower\_silesian {referring to the attractiveness level of 31 objects (29 Lower
@@ -728,7 +728,10 @@ per 1 km\textsuperscript{2} of the county area.
 
 
 The statistical data were collected in 2012 and come from the Local Data Bank of the Statistics Poland (GUS); the data for x7 variable only were obtained from the regional conservation officer. {Variables x1-x3, x7, x8, x10-x16 represent stimulants (where
-}{higher values are more preferred}{), variables
+}{higher values are more p
+
+
+rred}{), variables
 x4, x5 and x6 take the form of destimulants (where lower values are more preferred), and x9 is a nominant (nominal
 value is the best value and lies within range of variable -- 50\% level was adopted as the optimal one). Variable x9
 was transformed into a stimulant. }The coordinates of a Pattern object cover the most preferred preference variable
@@ -954,7 +957,7 @@ greater the value of the  $\mathit{HHI}_p$ index, the worse is the effect of mul
 representation real relationships between objects.
 
 
-\subsection[k]{Interval-valued data (symbolic-to-symbolic approach)}
+\subsection{Interval-valued data (symbolic-to-symbolic approach)}
 
 In second example we will find the optimal solution for symbolic-to-symbolic MDS approach. The dataset 
 data\_symbolic\_interval\_polish\_voivodships comes from \pkg{clusterSim} package. For the evaluation of
@@ -1232,7 +1235,7 @@ $I\text{{}-}\mathit{Stress}${. }MDS configuration (Figure \ref{figure:6} -- Conf
 voivodships according to the level of tourist attractiveness. In Figure \ref{figure:6} (Configuration plot) this voivodship lies further from Pattern object than Lubuskie (4). The greater the value of the  $\mathit{HHI}_p$ index, the worse is the
 effect of multidimensional scaling in terms of representation real relationships between objects.
 
-\section[l]{Summary}
+\section{Summary}
 
 The article proposes a methodology that allows the selection of the optimal MDS procedure for classical metric and
 interval-valued data. For classic-to-classic approach we choose best MDS procedure due to the used methods of
@@ -1263,7 +1266,7 @@ uniform distribution. Among the procedures of multidimensional scaling for which
 selected. This constraint does not essentially limit the presented proposal, as additional criteria for acceptability
 such as Shepard diagram (\cite{Leeuw+Mair:2015}) and Stress plot or  $I\text{{}-}\mathit{dist}$ diagram and 
 $I\text{{}-}\mathit{Stress}$ plot confirm the correctness of the MDS results.
-
+\addcontentsline{toc}{chapter}{References}
 \bibliography{\jobname}
 \end{document}
 

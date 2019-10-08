@@ -1,8 +1,8 @@
 Package: mdsOpt
 Title: Searching for Optimal MDS Procedure for Metric and
         Interval-Valued Data
-Version: 0.4-2
-Date: 2019-08-28
+Version: 0.4-3
+Date: 2019-09-18
 Author: Marek Walesiak <marek.walesiak@ue.wroc.pl>, Andrzej Dudek <andrzej.dudek@ue.wroc.pl>
 Maintainer: Andrzej Dudek <andrzej.dudek@ue.wroc.pl>
 Depends: R (>= 3.6.0), smacof, clusterSim, symbolicDA
@@ -18,6 +18,6 @@ License: GPL (>= 2)
 URL: http://keii.ue.wroc.pl/mdsOpt
 Encoding: UTF-8
 NeedsCompilation: no
-Packaged: 2019-08-28 08:22:33 UTC; andrzej
+Packaged: 2019-09-18 07:26:30 UTC; andrzej
 Repository: CRAN
-Date/Publication: 2019-08-28 09:00:02 UTC
+Date/Publication: 2019-10-08 14:00:02 UTC

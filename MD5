@@ -1,4 +1,4 @@
-3d29aef544b0dbe63a64e84115b4a230 *DESCRIPTION
+21daac8062a981ba38ee05ccb8f9279e *DESCRIPTION
 42379c7989804803eebd0100442eee92 *INDEX
 4394e6a1ccc7b06fe67b4ffa28906384 *NAMESPACE
 5f3f9f8b891511c641514e3ab1eac818 *R/drawIsoquants.r
@@ -12,8 +12,8 @@ aa7105a46c7b327f61a4eb9e196a910f *R/optSmacofSymInterval.r
 c73b2a4c504f8e984d912d225532548e *build/vignette.rds
 57a59f2f81e11be3749b6c6f9274117e *data/data_lower_silesian.rda
 a2ed803334c28f8d990480d368c779c2 *inst/CITATION
-bda5a0c853ce179dec171c78c9a0f704 *inst/doc/mdsOpt.ltx
-cf64b3544fd5b5310cb09082ce8f199e *inst/doc/mdsOpt.pdf
+d83a45559605e98430d9235a15d7893e *inst/doc/mdsOpt.ltx
+d11269db72f3ced725ef9786fdf48a73 *inst/doc/mdsOpt.pdf
 12efdb05914a642f7c481563f6511e8a *man/data_lower_silesian.rd
 bcb62302cdaab7ee3c560576cef5d1e0 *man/drawIsoquants.rd
 65fa014b811ffb6f667cc2815faf23ac *man/findOptimalIscalInterval.rd
@@ -33,4 +33,4 @@ a5a6991d9bd2257b136a48cc098af199 *vignettes/Fig4.pdf
 ed2eaa0c382ca0f4126edbcca34ec4da *vignettes/Fig5.pdf
 22480278fba248bb6a6ce43eefc0079f *vignettes/Fig6.pdf
 d5b7c7a64448a777031fffa8e7684313 *vignettes/mdsOpt.bib
-bda5a0c853ce179dec171c78c9a0f704 *vignettes/mdsOpt.ltx
+d83a45559605e98430d9235a15d7893e *vignettes/mdsOpt.ltx
