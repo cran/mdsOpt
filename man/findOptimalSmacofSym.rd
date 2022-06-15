@@ -5,8 +5,8 @@
 and nonmetric MDS (by varying all combinations of normalization methods and distance measures)}
 \usage{
 findOptimalSmacofSym(table,
-critical_stress=(max(as.numeric(gsub(",",".",table[,"STRESS 1"],fixed=T)))+
-min(as.numeric(gsub(",",".",table[,"STRESS 1"],fixed=T))))/2,
+critical_stress=(max(as.numeric(gsub(",",".",table[,"STRESS 1"],fixed=TRUE)))+
+min(as.numeric(gsub(",",".",table[,"STRESS 1"],fixed=TRUE))))/2,
 critical_HHI=NA)
 }
 \arguments{
@@ -41,12 +41,12 @@ result from \code{\link{optSmacofSym_nMDS}} or \code{\link{optSmacofSym_mMDS}}. 
 \author{
 Marek Walesiak \email{marek.walesiak@ue.wroc.pl}, Andrzej Dudek \email{andrzej.dudek@ue.wroc.pl} 
 
-Department of Econometrics and Computer Science, University of Economics, Wroclaw, Poland \url{http://keii.ue.wroc.pl/mdsOpt}
+Department of Econometrics and Computer Science, University of Economics, Wroclaw, Poland \url{http://keii.ue.wroc.pl/mdsOpt/}
 }
 \references{
-Borg, I., Groenen, P.J.F. (2005), Modern Multidimensional Scaling. Theory and Applications, 2nd Edition, Springer Science+Business Media, New York. ISBN: 978-0387-25150-9. Available at: \url{https://www.springer.com/la/book/9780387251509}.
+Borg, I., Groenen, P.J.F. (2005), Modern Multidimensional Scaling. Theory and Applications, 2nd Edition, Springer Science+Business Media, New York. ISBN: 978-0387-25150-9. Available at: \url{https://link.springer.com/book/10.1007/0-387-28981-X}.
 
-Borg, I., Groenen, P.J.F., Mair, P. (2013), Applied Multidimensional Scaling, Springer, Heidelberg, New York, Dordrecht, London. Available at: \url{http://dx.doi.org/10.1007/978-3-642-31848-1}.
+Borg, I., Groenen, P.J.F., Mair, P. (2013), Applied Multidimensional Scaling, Springer, Heidelberg, New York, Dordrecht, London. Available at: \doi{10.1007/978-3-642-31848-1}.
 
 De Leeuw, J., Mair, P. (2015), Shepard Diagram, Wiley StatsRef: Statistics Reference Online, John Wiley & Sons Ltd.
 
@@ -58,23 +58,23 @@ Walesiak, M. (2014), Przegląd formuł normalizacji wartości zmiennych oraz ich
 
 Walesiak, M. (2016a), Wybór grup metod normalizacji wartości zmiennych w skalowaniu wielowymiarowym [The Choice of Groups of Variable Normalization Methods in Multidimensional Scaling], Przegląd Statystyczny, tom 63, z. 1, 7-18. Available at: \url{http://keii.ue.wroc.pl/pracownicy/mw/2016_Walesiak_Przeglad_Statystyczny_z_1.pdf}
 
-Walesiak, M. (2016b), Visualization of Linear Ordering Results for Metric Data with the Application of Multidimensional Scaling, Ekonometria, 2(52), 9-21. Available at: \url{http://dx.doi.org/10.15611/ekt.2016.2.01}.
+Walesiak, M. (2016b), Visualization of Linear Ordering Results for Metric Data with the Application of Multidimensional Scaling, Ekonometria, 2(52), 9-21. Available at: \doi{10.15611/ekt.2016.2.01}.
 
-Walesiak, M., Dudek, A. (2017), \emph{Selecting the Optimal Multidimensional Scaling Procedure for Metric Data with R Environment}, STATISTICS IN TRANSITION new series, September, Vol. 18, No. 3, pp. 521-540. Available at: \url{http://dx.doi.org/10.21307/stattrans-2016-084}.
+Walesiak, M., Dudek, A. (2017), \emph{Selecting the Optimal Multidimensional Scaling Procedure for Metric Data with R Environment}, STATISTICS IN TRANSITION new series, September, Vol. 18, No. 3, pp. 521-540. Available at: \doi{10.21307/stattrans-2016-084}.
 }
 \seealso{\code{\link{data.Normalization}}, \code{\link{dist.GDM}}, \code{\link{dist}}, \code{\link{smacofSym}}
 }
 \examples{
-print("uncomment to run - approximately 7 seconds runtime")
-# uncomment to run - approximately 7 seconds runtime
-#  library(mdsOpt)
-#  metnor<-c("n1","n2","n3","n5","n5a","n8","n9","n9a","n11","n12a")
-#  metscale<-c("ratio","interval")
-#  metdist<-c("euclidean","manhattan","maximum","seuclidean","GDM1")
-#  data(data_lower_silesian)
-#  res<-optSmacofSym_mMDS(data_lower_silesian,normalizations=metnor,
-#  distances=metdist,mdsmodels=metscale,outDec=".")
-#  print(findOptimalSmacofSym(res))
+  \donttest{
+  library(mdsOpt)
+  metnor<-c("n1","n2","n3","n5","n5a","n8","n9","n9a","n11","n12a")
+  metscale<-c("ratio","interval")
+  metdist<-c("euclidean","manhattan","maximum","seuclidean","GDM1")
+  data(data_lower_silesian)
+  res<-optSmacofSym_mMDS(data_lower_silesian,normalizations=metnor,
+  distances=metdist,mdsmodels=metscale,outDec=".")
+  print(findOptimalSmacofSym(res))
+  }
 }
 \keyword{multidimensional scaling}
 \keyword{nonmetric MDS}

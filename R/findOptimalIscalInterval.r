@@ -1,4 +1,4 @@
-findOptimalIscalInterval<-function(table,critical_stress=(max(as.numeric(gsub(",",".",table[,"I-STRESS"],fixed=T)))+min(as.numeric(gsub(",",".",table[,"I-STRESS"],fixed=T))))/2,critical_HHI=NA){
+findOptimalIscalInterval<-function(table,critical_stress=(max(as.numeric(gsub(",",".",table[,"I-STRESS"],fixed=TRUE)))+min(as.numeric(gsub(",",".",table[,"I-STRESS"],fixed=TRUE))))/2,critical_HHI=NA){
   if(is.na(critical_stress) && is.na(critical_stress)){
   stop("One of the criterions critical_Stress or critical_HHI shoul be set")
   }
@@ -15,8 +15,8 @@ findOptimalIscalInterval<-function(table,critical_stress=(max(as.numeric(gsub(",
   print(opt)
   number<-(1:nrow(table))[order(as.numeric(gsub(",",".",table[,opt])))]
   table<-table[order(as.numeric(gsub(",",".",table[,opt]))),]
-  number<-number[as.numeric(gsub(",",".",table[,cut],fixed=T))<=critical]
-  table<-table[as.numeric(gsub(",",".",table[,cut],fixed=T))<=critical,]
+  number<-number[as.numeric(gsub(",",".",table[,cut],fixed=TRUE))<=critical]
+  table<-table[as.numeric(gsub(",",".",table[,cut],fixed=TRUE))<=critical,]
   if(nrow(table)==0){
     stop("No mds procedure for given constraints")
   }
@@ -24,6 +24,6 @@ findOptimalIscalInterval<-function(table,critical_stress=(max(as.numeric(gsub(",
       Nr=as.vector(number[1]),
       Normalization_method=as.vector(table[1,"Normalization method"]),
       Opt_method=as.vector(table[1,"Opt method"]),
-      I_STRESS=as.numeric(gsub(",",".",table[1,"I-STRESS"],fixed=T)),HHI_spb=as.numeric(gsub(",",".",table[1,"HHI spb"],fixed=T)))
+      I_STRESS=as.numeric(gsub(",",".",table[1,"I-STRESS"],fixed=TRUE)),HHI_spb=as.numeric(gsub(",",".",table[1,"HHI spb"],fixed=TRUE)))
   return(res)
 }

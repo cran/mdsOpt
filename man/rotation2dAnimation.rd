@@ -53,29 +53,30 @@ Other utilities: \code{\link{im.convert}},
 \author{
 Marek Walesiak \email{marek.walesiak@ue.wroc.pl}, Andrzej Dudek \email{andrzej.dudek@ue.wroc.pl} 
 
-Department of Econometrics and Computer Science, University of Economics, Wroclaw, Poland \url{http://keii.ue.wroc.pl/mdsOpt}
+Department of Econometrics and Computer Science, University of Economics, Wroclaw, Poland \url{http://keii.ue.wroc.pl/mdsOpt/}
 }
 \references{
-Walesiak, M. (2016), Visualization of Linear Ordering Results for Metric Data with the Application of Multidimensional Scaling, Ekonometria, 2(52), 9-21. Available at: \url{http://dx.doi.org/10.15611/ekt.2016.2.01}.
+Walesiak, M. (2016), Visualization of Linear Ordering Results for Metric Data with the Application of Multidimensional Scaling, Ekonometria, 2(52), 9-21. Available at: \doi{10.15611/ekt.2016.2.01}.
 
-Walesiak, M. (2017), The application of multidimensional scaling to measure and assess changes in the level of social cohesion of the Lower Silesia region in the period 2005-2015, Ekonometria, 3(57), 9-25. Available at: \url{http://dx.doi.org/10.15611/ekt.2017.3.01}.
+Walesiak, M. (2017), The application of multidimensional scaling to measure and assess changes in the level of social cohesion of the Lower Silesia region in the period 2005-2015, Ekonometria, 3(57), 9-25. Available at: \doi{10.15611/ekt.2017.3.01}.
 
-Walesiak, M., Dudek, A. (2017), \emph{Selecting the Optimal Multidimensional Scaling Procedure for Metric Data with R Environment}, STATISTICS IN TRANSITION new series, September, Vol. 18, No. 3, pp. 521-540. Available at: \url{http://dx.doi.org/10.21307/stattrans-2016-084}.
+Walesiak, M., Dudek, A. (2017), \emph{Selecting the Optimal Multidimensional Scaling Procedure for Metric Data with R Environment}, STATISTICS IN TRANSITION new series, September, Vol. 18, No. 3, pp. 521-540. Available at: \doi{10.21307/stattrans-2016-084}.
 
 \url{http://ffmpeg.org/documentation.html}
 }
 \examples{
-#uncomment to run - approximate time 12 seconds
-#library(mdsOpt)
-#library(smacof)
-#library(animation)
-#library(spdep)
-#library(clusterSim)
-#data(data_lower_silesian)
-#z<-data.Normalization(data_lower_silesian, type="n1")
-#d<-dist.GDM(z, method="GDM1")
-#res<-smacofSym(delta=d,ndim=2,type="interval")
-#konf<-as.matrix(res$conf)
-#rotation2dAnimation(conf2d=konf,angle.start=-0,angle.stop=2*pi)
+  \donttest{
+  library(mdsOpt)
+  library(smacof)
+  library(animation)
+  library(spdep)
+  library(clusterSim)
+  data(data_lower_silesian)
+  z<-data.Normalization(data_lower_silesian, type="n1")
+  d<-dist.GDM(z, method="GDM1")
+  res<-smacofSym(delta=d,ndim=2,type="interval")
+  konf<-as.matrix(res$conf)
+  rotation2dAnimation(conf2d=konf,angle.start=-0,angle.stop=2*pi)
+  }
 }
 \keyword{2D rotation}
