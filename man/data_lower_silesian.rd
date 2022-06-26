@@ -16,18 +16,18 @@ x8 – % of a county forest cover,
 x9 – % share of legally protected areas within a county area,
 x10 – number of events as well as cultural and tourist ventures in a county,
 x11 – number of natural monuments calculated per 1 km2 of a county area,
-x12 – number of tourist economy entities per 1000 inhabitants of a county (natural and le-gal persons),
+x12 – number of tourist economy entities per 1000 inhabitants of a county (natural and legal persons),
 x13 – expenditure of municipalities and counties on tourism, culture and national heritage protection as well as physical culture per 1 inhabitant of a county in PLN,
 x14 – viewers in cinemas per 1000 inhabitants of a county,
 x15 – museum visitors per 1000 inhabitants of a county,
 x16 – number of construction permits (hotels and accommodation buildings, commercial and service buildings, transport and communication buildings, civil and water engineering constructions) issued in a county in the years 2011-2012 per 1 km2 of a county area.
 The statistical data were collected in 2012 and come from the Local Data Bank of the Central Statistical Office of Poland, the data for x7 variable only were obtained from the regional conservation officer.
 }
-\format{data.frame: 31 objects (29 counties, pattern and antipattern object, 16 variables. 
+\format{data.frame: 31 objects (29 counties, pattern and antipattern object), 16 variables. 
 The coordinates of a pattern object cover the most preferred preference variable (stimulants, destimulants, nominants) values. 
 The coordinates of an anti-pattern object cover the least preferred preference variable values.}
 \source{
-Gryszel P., Walesiak M., (2014), Zastosowanie uogólnionej miary odległości GDM w ocenie atrakcyjności turystycznej powiatów Dolnego Śląska [The Application of the General Distance Measure (GDM) in the Evaluation of Lower Silesian Districts’ Attractiveness], Folia Turistica, 31, 127-147. Available at: \url{http://www.folia-turistica.pl/attachments/article/402/FT_31_2014.pdf}.
+Gryszel, P., Walesiak, M., (2014), Zastosowanie uogólnionej miary odległości GDM w ocenie atrakcyjności turystycznej powiatów Dolnego Śląska [The Application of the General Distance Measure (GDM) in the Evaluation of Lower Silesian Districts’ Attractiveness], Folia Turistica, 31, 127-147. Available at: \url{http://www.folia-turistica.pl/attachments/article/402/FT_31_2014.pdf}.
 }
 \examples{
 \donttest{

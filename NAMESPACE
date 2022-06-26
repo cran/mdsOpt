@@ -19,4 +19,4 @@ importFrom('animation','saveVideo','ani.options')
 importFrom('spdep','Rotation')
 importFrom('plotrix','draw.circle')
 
-useDynLib(mdsOpt)
+#useDynLib(mdsOpt)

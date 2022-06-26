@@ -57,7 +57,7 @@ Data frame ordered by increasing value of Stress-1 fit measure with columns:
 \author{
 Marek Walesiak \email{marek.walesiak@ue.wroc.pl}, Andrzej Dudek \email{andrzej.dudek@ue.wroc.pl} 
 
-Department of Econometrics and Computer Science, University of Economics, Wroclaw, Poland \url{http://keii.ue.wroc.pl/mdsOpt/}
+Department of Econometrics and Computer Science, Wroclaw University of Economics and Business, Poland \url{http://keii.ue.wroc.pl/mdsOpt/}
 }
 \references{
 Borg, I., Groenen, P.J.F. (2005), Modern Multidimensional Scaling. Theory and Applications, 2nd Edition, Springer Science+Business Media, New York. ISBN: 978-0387-25150-9. Available at: \url{https://link.springer.com/book/10.1007/0-387-28981-X}.
@@ -65,6 +65,8 @@ Borg, I., Groenen, P.J.F. (2005), Modern Multidimensional Scaling. Theory and Ap
 Borg, I., Groenen, P.J.F., Mair, P. (2013), Applied Multidimensional Scaling, Springer, Heidelberg, New York, Dordrecht, London. Available at: \doi{10.1007/978-3-642-31848-1}.
 
 De Leeuw, J., Mair, P. (2015), Shepard Diagram, Wiley StatsRef: Statistics Reference Online, John Wiley & Sons Ltd.
+
+Dudek, A., Walesiak, M. (2020), The Choice of Variable Normalization Method in Cluster Analysis, pp. 325-340, [In:] K. S. Soliman (Ed.), Education Excellence and Innovation Management: A 2025 Vision to Sustain Economic Development during Global Challenges, Proceedings of the 35th International Business Information Management Association Conference (IBIMA), 1-2 April 2020, Seville, Spain. ISBN: 978-0-9998551-4-1.
 
 Herfindahl, O.C. (1950), Concentration in the Steel Industry, Doctoral thesis, Columbia University.
 
@@ -76,7 +78,9 @@ Walesiak, M. (2016a), Wybór grup metod normalizacji wartości zmiennych w skalo
 
 Walesiak, M. (2016b), Visualization of Linear Ordering Results for Metric Data with the Application of Multidimensional Scaling, Ekonometria, 2(52), 9-21. Available at: \doi{10.15611/ekt.2016.2.01}.
 
-Walesiak, M., Dudek, A. (2017), \emph{Selecting the Optimal Multidimensional Scaling Procedure for Metric Data with R Environment}, STATISTICS IN TRANSITION new series, September, Vol. 18, No. 3, pp. 521-540. Available at: \doi{10.21307/stattrans-2016-084}.
+Walesiak, M., Dudek, A. (2017), \emph{Selecting the Optimal Multidimensional Scaling Procedure for Metric Data with R Environment}, STATISTICS IN TRANSITION new series, September, Vol. 18, No. 3, pp. 521-540.
+
+Walesiak, M., Dudek, A. (2020), Searching for an Optimal MDS Procedure for Metric and Interval-Valued Data using mdsOpt R package, pp. 307-324, [In:] K. S. Soliman (Ed.), Education Excellence and Innovation Management: A 2025 Vision to Sustain Economic Development during Global Challenges, Proceedings of the 35th International Business Information Management Association Conference (IBIMA), 1-2 April 2020, Seville, Spain. ISBN: 978-0-9998551-4-1.
 }
 \seealso{\code{\link{data.Normalization}}, \code{\link{dist.GDM}}, \code{\link{dist}}, \code{\link{smacofSym}}
 }
