@@ -53,7 +53,7 @@ Data frame ordered by increasing value of Stress-1 fit measure with columns:
 \author{
 Marek Walesiak \email{marek.walesiak@ue.wroc.pl}, Andrzej Dudek \email{andrzej.dudek@ue.wroc.pl} 
 
-Department of Econometrics and Computer Science, Wroclaw University of Economics and Business, Poland \url{http://keii.ue.wroc.pl/mdsOpt/}
+Department of Econometrics and Computer Science, Wroclaw University of Economics and Business, Poland
 }
 \references{
 Borg, I., Groenen, P.J.F. (2005), Modern Multidimensional Scaling. Theory and Applications, 2nd Edition, Springer Science+Business Media, New York. ISBN: 978-0387-25150-9. Available at: \url{https://link.springer.com/book/10.1007/0-387-28981-X}.
@@ -68,9 +68,9 @@ Herfindahl, O.C. (1950), Concentration in the Steel Industry, Doctoral thesis, C
 
 Hirschman, A.O. (1964), The Paternity of an Index, The American Economic Review, Vol. 54, 761-762.
 
-Walesiak, M. (2014), Przegląd formuł normalizacji wartości zmiennych oraz ich własności w statystycznej analizie wielowymiarowej [Data Normalization in Multivariate Data Analysis. An Overview and Properties], Przegląd Statystyczny, tom 61, z. 4, 363-372. Available at: \url{http://keii.ue.wroc.pl/pracownicy/mw/2014_Walesiak_Przeglad_Statystyczny_z_4.pdf}
+Walesiak, M. (2014), Przegląd formuł normalizacji wartości zmiennych oraz ich własności w statystycznej analizie wielowymiarowej [Data Normalization in Multivariate Data Analysis. An Overview and Properties], Przegląd Statystyczny, tom 61, z. 4, 363-372. Available at: \doi{10.5604/01.3001.0016.1740}.
 
-Walesiak, M. (2016a), Wybór grup metod normalizacji wartości zmiennych w skalowaniu wielowymiarowym [The Choice of Groups of Variable Normalization Methods in Multidimensional Scaling], Przegląd Statystyczny, tom 63, z. 1, 7-18. Available at: \url{http://keii.ue.wroc.pl/pracownicy/mw/2016_Walesiak_Przeglad_Statystyczny_z_1.pdf}
+Walesiak, M. (2016a), Wybór grup metod normalizacji wartości zmiennych w skalowaniu wielowymiarowym [The Choice of Groups of Variable Normalization Methods in Multidimensional Scaling], Przegląd Statystyczny, tom 63, z. 1, 7-18. Available at: \doi{10.5604/01.3001.0014.1145}.
 
 Walesiak, M. (2016b), Visualization of Linear Ordering Results for Metric Data with the Application of Multidimensional Scaling, Ekonometria, 2(52), 9-21. Available at: \doi{10.15611/ekt.2016.2.01}.
 

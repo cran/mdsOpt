@@ -68,7 +68,7 @@ Data frame ordered by increasing value of Stress-1 fit measure with columns:
 \author{
 Marek Walesiak \email{marek.walesiak@ue.wroc.pl}, Andrzej Dudek \email{andrzej.dudek@ue.wroc.pl} 
 
-Department of Econometrics and Computer Science, Wroclaw University of Economics and Business, Poland \url{http://keii.ue.wroc.pl/mdsOpt/}
+Department of Econometrics and Computer Science, Wroclaw University of Economics and Business, Poland
 }
 \references{
 Borg, I., Groenen, P.J.F. (2005), Modern Multidimensional Scaling. Theory and Applications, 2nd Edition, Springer Science+Business Media, New York. ISBN: 978-0387-25150-9. Available at: \url{https://link.springer.com/book/10.1007/0-387-28981-X}.
@@ -83,7 +83,7 @@ Herfindahl, O.C. (1950), Concentration in the Steel Industry, Doctoral thesis, C
 
 Hirschman, A.O. (1964), The Paternity of an Index, The American Economic Review, Vol. 54, 761-762.
 
-Walesiak, M. (2014), Przegląd formuł normalizacji wartości zmiennych oraz ich własności w statystycznej analizie wielowymiarowej [Data Normalization in Multivariate Data Analysis. An Overview and Properties], Przegląd Statystyczny, tom 61, z. 4, 363-372. Available at: \url{http://keii.ue.wroc.pl/pracownicy/mw/2014_Walesiak_Przeglad_Statystyczny_z_4.pdf}
+Walesiak, M. (2014), Przegląd formuł normalizacji wartości zmiennych oraz ich własności w statystycznej analizie wielowymiarowej [Data Normalization in Multivariate Data Analysis. An Overview and Properties], Przegląd Statystyczny, tom 61, z. 4, 363-372. Available at: \doi{10.5604/01.3001.0016.1740}.
 
 Walesiak, M., Dudek, A. (2017), \emph{Selecting the Optimal Multidimensional Scaling Procedure for Metric Data with R Environment}, STATISTICS IN TRANSITION new series, September, Vol. 18, No. 3, pp. 521-540.
 

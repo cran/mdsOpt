@@ -6,7 +6,7 @@ drawIsoquants(x,y=NULL,number=6,steps=NULL)
 }
 \arguments{
 \item{x}{two dimensional point (center)}
-\item{y}{optional - second point, used for calculations of step size if \code{steps} is null }
+\item{y}{optional - second point, used for calculations of step size if \code{steps} is null}
 \item{number}{number of isoquants}
 \item{steps}{distance between following isoquants starting from x, if length of this arguments is lower than \code{number} argument last item is repeated}
 }
@@ -18,7 +18,7 @@ function draw series of isoquants  (a contour line drawn through the set of poin
 \author{
 Marek Walesiak \email{marek.walesiak@ue.wroc.pl}, Andrzej Dudek \email{andrzej.dudek@ue.wroc.pl} 
 
-Department of Econometrics and Computer Science, Wroclaw University of Economics and Business, Poland \url{http://keii.ue.wroc.pl/mdsOpt/}
+Department of Econometrics and Computer Science, Wroclaw University of Economics and Business, Poland
 }
 \references{
 Walesiak, M., (2016), Visualization of Linear Ordering Results for Metric Data with the Application of Multidimensional Scaling, Ekonometria, 2(52), 9-21. Available at: \doi{10.15611/ekt.2016.2.01}.

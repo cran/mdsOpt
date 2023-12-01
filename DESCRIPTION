@@ -1,8 +1,8 @@
 Package: mdsOpt
 Title: Searching for Optimal MDS Procedure for Metric and
         Interval-Valued Data
-Version: 0.7-1
-Date: 2022-06-26
+Version: 0.7-6
+Date: 2023-12-01
 Authors@R: c(person(given = "Marek", 
            family = "Walesiak", 
            role = c("aut"),
@@ -22,12 +22,11 @@ Description: Selecting the optimal multidimensional scaling (MDS) procedure for 
  Walesiak, M. (2016) <doi:10.15611/ekt.2016.2.01>, 
  Walesiak, M. (2017) <doi:10.15611/ekt.2017.3.01>).
 License: GPL (>= 2)
-URL: http://keii.ue.wroc.pl/mdsOpt/
 Encoding: UTF-8
 NeedsCompilation: no
-Packaged: 2022-06-26 09:54:56 UTC; andrzej
+Packaged: 2023-12-01 13:20:20 UTC; andrzej
 Author: Marek Walesiak [aut] (<https://orcid.org/0000-0003-0922-2323>),
   Andrzej Dudek [aut, cre] (<https://orcid.org/0000-0002-4943-8703>)
 Maintainer: Andrzej Dudek <andrzej.dudek@ue.wroc.pl>
 Repository: CRAN
-Date/Publication: 2022-06-26 10:40:01 UTC
+Date/Publication: 2023-12-01 15:50:02 UTC
