@@ -43,12 +43,12 @@ where \code{interval} comes from \code{ani.options('interval')}, and
 \code{ani.type} is from \code{ani.options('ani.type')}. For more details on
 the numerous options of FFmpeg, please see the reference.
 
-Some linux systems may use the alternate software 'avconv' instead of 'ffmpeg'. The package will attempt to determine which command is present and set \code{\link{ani.options}('ffmpeg')} to an appropriate default value. This can be overridden by passing in the \code{ffmpeg} argument.
+Some linux systems may use the alternate software 'avconv' instead of 'ffmpeg'. The package will attempt to determine which command is present and set \code{\link[animation]{ani.options}('ffmpeg')} to an appropriate default value. This can be overridden by passing in the \code{ffmpeg} argument.
 }
 \seealso{
-Other utilities: \code{\link{im.convert}},
-  \code{\link{saveGIF}}, \code{\link{saveHTML}},
-  \code{\link{saveLatex}}, \code{\link{saveSWF}}
+Other utilities: \code{\link[animation]{im.convert}},
+  \code{\link[animation]{saveGIF}}, \code{\link[animation]{saveHTML}},
+  \code{\link[animation]{saveLatex}}, \code{\link[animation]{saveSWF}}
 }
 \author{
 Marek Walesiak \email{marek.walesiak@ue.wroc.pl}, Andrzej Dudek \email{andrzej.dudek@ue.wroc.pl} 

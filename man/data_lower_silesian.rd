@@ -27,7 +27,7 @@ The statistical data were collected in 2012 and come from the Local Data Bank of
 The coordinates of a pattern object cover the most preferred preference variable (stimulants, destimulants, nominants) values. 
 The coordinates of an anti-pattern object cover the least preferred preference variable values.}
 \source{
-Gryszel, P., Walesiak, M., (2014), Zastosowanie uogólnionej miary odległości GDM w ocenie atrakcyjności turystycznej powiatów Dolnego Śląska [The Application of the General Distance Measure (GDM) in the Evaluation of Lower Silesian Districts’ Attractiveness], Folia Turistica, 31, 127-147. Available at: \url{http://www.folia-turistica.pl/attachments/article/402/FT_31_2014.pdf}.
+Gryszel, P., Walesiak, M., (2014), Zastosowanie uogólnionej miary odległości GDM w ocenie atrakcyjności turystycznej powiatów Dolnego Śląska [The Application of the General Distance Measure (GDM) in the Evaluation of Lower Silesian Districts’ Attractiveness], Folia Turistica, 31, 127-147.
 }
 \examples{
 \donttest{

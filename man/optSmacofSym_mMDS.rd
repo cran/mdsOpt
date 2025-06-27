@@ -82,7 +82,7 @@ Walesiak, M., Dudek, A. (2017), \emph{Selecting the Optimal Multidimensional Sca
 
 Walesiak, M., Dudek, A. (2020), Searching for an Optimal MDS Procedure for Metric and Interval-Valued Data using mdsOpt R package, pp. 307-324, [In:] K. S. Soliman (Ed.), Education Excellence and Innovation Management: A 2025 Vision to Sustain Economic Development during Global Challenges, Proceedings of the 35th International Business Information Management Association Conference (IBIMA), 1-2 April 2020, Seville, Spain. ISBN: 978-0-9998551-4-1.
 }
-\seealso{\code{\link{data.Normalization}}, \code{\link{dist.GDM}}, \code{\link{dist}}, \code{\link{smacofSym}}
+\seealso{\code{\link[clusterSim]{data.Normalization}}, \code{\link[clusterSim]{dist.GDM}}, \code{\link{dist}}, \code{\link[smacof]{smacofSym}}
 }
 \examples{
   \donttest{
